@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class = "header">
+        <h1 id="title">To do list</h1>
+    </div>
+
+    <div class="input-panel">
+        <input type="text" id="task-name-input" placeholder="Add a task">
+        <button id="add-task-btn">Add task</button>
+    </div>
+
+    <div class="dataAndTime"></div>
+
+    <div class="input-panel showTasks">
+        <button id="show-all-btn">All tasks</button>
+        <button id="show-not-completed-btn">Unfinished tasks</button>
+    </div>
+
+    <div id="mydList">
+        <div class="task-list">
+            <p id="start-message">No new tasks</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

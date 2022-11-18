@@ -1,0 +1,241 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Work Sans', sans-serif;
+    min-height: 100vh;
+    padding-top: 3%;
+    background: linear-gradient(180.2deg, rgb(30, 33, 48) 6.8%, rgb(74, 98, 110) 131%);
+}
+
+.header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 25vh;
+    width: 100%;
+}
+#title {
+    border-right: solid 3px #13161e;
+    white-space: pre;
+    overflow: hidden;
+    letter-spacing: 0.20rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    max-width: 480px;
+    font-size: 90px;
+    color: rgb(247, 226, 223);
+}
+#title {
+    animation: animated-text 2s steps(11,end) 0.5s 1 normal both,
+               animated-cursor 750ms steps(11,end) infinite;
+}
+@keyframes animated-text{
+    from{width: 0%;}
+    to{width: 430px;}
+}
+@keyframes animated-cursor{
+    from{border-right-color: rgba(0, 0, 0, 0.75);}
+    to{border-right-color: transparent;}
+}
+
+.dataAndTime{
+    color: rgb(247, 226, 223);
+}
+.input-panel{
+    display: flex;
+    font-size: 1.7rem;
+    justify-content: center;
+    margin: 10px 0px;
+    padding: 0.8rem;
+    width: 100%;
+}
+#task-name-input{
+    padding: 5px 20px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    border-top-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    max-width: 500px;
+    transition: background-color 200ms ease-in-out;
+    width: 100%;
+    background-color: #13161e;
+    color: rgb(247, 226, 223);
+    font-family: 'Work Sans', sans-serif;
+}
+#task-name-input:hover {
+    cursor: text;
+}
+#add-task-btn, button{
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    background-color: rgb(247, 226, 223);
+    color: rgb(0, 0, 0);
+}
+#add-task-btn{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    min-width: 100px;
+}
+button{
+    transition: box-shadow 200ms ease, background-color 200ms ease-in-out;
+}
+button:hover, .task-input:hover, .mark:hover {
+    cursor: pointer;
+    background-color: white;
+    box-shadow: #fff8 0 0 10px;
+}
+.showTasks button{
+    background-color: rgb(247, 226, 223);
+    margin: 10px;
+    width: 140px;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 15px;
+}
+#mydList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+.task-list{
+    min-width: 25%;
+}
+#start-message{
+    color: white;
+    text-align: center;
+}
+.task{
+    margin: 10px;
+    font-size: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 30px;
+    transition: background-color 200ms ease-in-out;
+    background-color: #13161e;
+    color: rgb(247, 226, 223);
+}
+.task p{
+    padding: 7px;
+    font-size: 15px;
+    flex: 1;
+    border-radius: 30px;
+    overflow-wrap: anywhere;
+}
+.delete-btn {
+    font-size: 19px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 80%;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputContainer{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: 17px;
+}
+.task-input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.mark{
+    position: absolute;
+    top: -9px;
+    left: -5px;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(247, 226, 223);
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.mark::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url("./image/done.png");
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.delete-btn img{
+    width: 18px;
+    height: 18px;
+}
+
+.completed {
+    transition: 0.2s;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+
+@media(max-width: 850px){
+    .header{
+        min-height: 15vh;
+    }
+    #title{
+        font-size: 60px;
+    }
+    @keyframes animated-text{
+        from{width: 0%;}
+        to{width: 300px;}
+    }
+
+}
+
+@media(max-width: 480px){
+    #title{
+        font-size: 50px;
+    }
+    @keyframes animated-text{
+        from{width: 0%;}
+        to{width: 250px;}
+    }
+    .input-panel{
+        margin: 5px 0;
+    }
+    #add-task-btn{
+        min-width: 70px;
+    }
+    #add-task-btn,.showTasks button, #task-name-input, .task p {
+        font-size: 11px;
+    }
+    .task input, .task button, .mark{
+        width: 25px;
+        height: 25px;
+    }
+    .mark{
+        top: -7px;
+        left: 3px;
+    }
+
+}
